@@ -1,9 +1,9 @@
-# main.py
+# menu.py
 
 from api import API
 from userinput import UserInput
 
-class Main:
+class Menu:
     def __init__():
         pass
     
