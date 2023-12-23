@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(139, 95, 102);
+}
+
+h1 {
+    color: plum;
+    position: relative;
+    text-align: center;
+    font-size: 75px;
+    font-family:fantasy;
+    font-variant: small-caps;
+}
