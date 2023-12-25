@@ -10,3 +10,14 @@ h1 {
     font-family:fantasy;
     font-variant: small-caps;
 }
+
+#playlist-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+#top-bar{
+    /*make it stay at the top always*/
+}
