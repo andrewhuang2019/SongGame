@@ -12,7 +12,6 @@ from spotipy.oauth2 import SpotifyClientCredentials
 
 class API:
     def __init__(self):
-
         os.environ['SPOTIPY_CLIENT_ID'] = '11fa54af84e7489eb6ceeea69ccd38d6'
         os.environ['SPOTIPY_CLIENT_SECRET'] = '257c188fd54c4e9c86a964982f22bcc8'
 
@@ -31,29 +30,45 @@ class API:
             print('cover art: ' + track['album']['images'][0]['url'])
             print()
 
+    # can use current user methods
     def authorization_code_flow(self):
+
         scope = "user-library-read"
 
         sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
         results = sp.current_user_saved_tracks()
 
-        for idx, item in enumerate(results['items']):
-            track = item['track']
-            print(idx, track['artists'][0]['name'], " – ", track['name'])
+        user = sp.current_user()
+        print(user)
 
+        '''for idx, item in enumerate(results['items']):
+            track = item['track']
+            print(idx, track['artists'][0]['name'], " – ", track['name'])'''
+
+    # cannot use current user methods
+    # must use ID
     def client_credentials_flow(self):
+
         auth_manager = SpotifyClientCredentials()
         sp = spotipy.Spotify(auth_manager=auth_manager)
+        user_id = '317apgb6nqp6r6rpndfwb2hw4s74?si=9d82f8b318434677'
 
-        playlists = sp.user_playlists('spotify')
-        while playlists:
+        playlists = sp.user_playlists(user_id)
+
+        # User ID: 317apgb6nqp6r6rpndfwb2hw4s74?si=9d82f8b318434677
+        # Playlist Link: https://open.spotify.com/playlist/49se2DJsnGlPGrbXZgwQ5T?si=5003f7fdee084eab
+
+        print(json.dumps(playlists, sort_keys=True, indent=4))
+        print(sp.user(user_id))
+
+        '''while playlists:
             for i, playlist in enumerate(playlists['items']):
                 print("%4d %s %s" % (i + 1 + playlists['offset'], playlist['uri'], playlist['name']))
             if playlists['next']:
                 playlists = sp.next(playlists)
             else:
-                playlists = None
+                playlists = None'''
 
     def spotipy_tutorial(self):
         # find User ID from logging into spotify and share + link.

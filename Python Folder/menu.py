@@ -5,7 +5,7 @@ from userinput import UserInput
 
 class Menu:
     def __init__(self):
-        api = API()
+        self.api = API()
     
     def run(self):
-        pass
+        self.api.client_credentials_flow()
