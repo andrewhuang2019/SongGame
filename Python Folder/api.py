@@ -40,9 +40,15 @@ class API:
         results = sp.current_user_saved_tracks()
 
         user = sp.current_user()
+        saved_tracks = sp.current_user_saved_tracks()
+        top_tracks = sp.current_user_top_tracks()
         print(user)
+        # track['preview_url']
 
-        '''for idx, item in enumerate(results['items']):
+        #for track in sp.current_user_top_tracks():
+        #    print('audio: ' + track['items']['preview_url'])
+
+        '''for idx, item in enumerate(saved_tracks['items']):
             track = item['track']
             print(idx, track['artists'][0]['name'], " – ", track['name'])'''
 

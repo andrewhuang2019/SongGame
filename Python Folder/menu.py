@@ -8,4 +8,4 @@ class Menu:
         self.api = API()
     
     def run(self):
-        self.api.client_credentials_flow()
+        self.api.authorization_code_flow()
