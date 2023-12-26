@@ -19,16 +19,25 @@ class API:
         os.environ['SPOTIPY_REDIRECT_URI'] = 'http://google.com/'
 
     def quick_start(self):
+        #client_id = 'your-client-id'
+        #client_secret = 'your-client-secret'
+
         lz_uri = 'spotify:artist:36QJpDe2go2KgaRleHCDTp'
-
         spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
-        results = spotify.artist_top_tracks(lz_uri)
 
-        for track in results['tracks'][:10]:
+
+        track = spotify.artist_top_tracks(lz_uri)
+        tracks = track['tracks']
+        for item in tracks:
+            print('audio  : ' + item['preview_url'])
+
+
+        """for track in results['tracks'][:10]:
             print('track    : ' + track['name'])
             print('audio    : ' + track['preview_url'])
             print('cover art: ' + track['album']['images'][0]['url'])
-            print()
+            print()"""
+        
 
     # can use current user methods
     def authorization_code_flow(self):

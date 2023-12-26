@@ -8,4 +8,5 @@ class Menu:
         self.api = API()
     
     def run(self):
-        self.api.authorization_code_flow()
+        #self.api.authorization_code_flow()
+        self.api.quick_start()
