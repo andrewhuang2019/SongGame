@@ -10,37 +10,6 @@ import spotipy as util
 from spotipy.oauth2 import SpotifyOAuth
 from spotipy.oauth2 import SpotifyClientCredentials
 
-# find User ID from logging into spotify and share + link.
-# it's the numbers after the link
-
-# get username from terminal
-# username = sys.argv[1]
-
-# User ID:
-
-# erase cache and prompt for user permission
-'''try:
-    token = util.prompt_for_user_token(username)
-except:
-    os.remove(f".cache-{username}")'''
-
-# create spotifyObject
-
-# spotifyObject = spotipy.Spotify(auth=token)
-
-# gives data of the current user
-# user = spotifyObject.current_user()
-
-# gives json data
-# print(json.dumps(user, sort_keys=True, indent=4))
-
-# can grab the user's specific information using:
-# displayName = user['display_name']
-# follower = user['followers']['total']
-
-# we can then set the environment variables in the terminal using 'export'
-# check spotipy api reference for the individual methods
-
 class API:
     def __init__(self):
 
@@ -85,5 +54,37 @@ class API:
                 playlists = sp.next(playlists)
             else:
                 playlists = None
-    
+
+    def spotipy_tutorial(self):
+        # find User ID from logging into spotify and share + link.
+        # it's the numbers after the link
+
+        # get username from terminal
+        scope = sys.argv[1]
+
+        # User ID:
+
+        # erase cache and prompt for user permission
+        # actually archived
+        '''try:
+            scope = util.prompt_for_user_token(username)
+        except:
+            os.remove(f".cache-{username}")'''
+
+        # create spotifyObject
+        auth_manager = SpotifyClientCredentials()
+        spotify_object = spotipy.Spotify(auth_manager=auth_manager)
+
+        # gives data of the current user
+        user = spotify_object.current_user()
+
+        # gives json data
+        print(json.dumps(user, sort_keys=True, indent=4))
+
+        # can grab the user's specific information using:
+        displayName = user['display_name']
+        follower = user['followers']['total']
+
+        # we can then set the environment variables in the terminal using 'export'
+        # check spotipy api reference for the individual methods
     
