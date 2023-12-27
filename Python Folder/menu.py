@@ -9,4 +9,4 @@ class Menu:
     
     def run(self):
         #self.api.authorization_code_flow()
-        self.api.quick_start()
+        self.api.spotipy_tutorial()

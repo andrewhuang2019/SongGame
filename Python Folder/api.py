@@ -90,7 +90,7 @@ class API:
         # it's the numbers after the link
 
         # get username from terminal
-        scope = sys.argv[1]
+        # scope = sys.argv[1]
 
         # User ID:
 
@@ -101,12 +101,16 @@ class API:
         except:
             os.remove(f".cache-{username}")'''
 
+        scope = "user-library-read"
+
         # create spotifyObject
-        auth_manager = SpotifyClientCredentials()
-        spotify_object = spotipy.Spotify(auth_manager=auth_manager)
+        spotify_object = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
         # gives data of the current user
         user = spotify_object.current_user()
+
+        # we can then set the environment variables in the terminal using 'export'
+        # check spotipy api reference for the individual methods
 
         # gives json data
         print(json.dumps(user, sort_keys=True, indent=4))
@@ -115,6 +119,30 @@ class API:
         displayName = user['display_name']
         follower = user['followers']['total']
 
-        # we can then set the environment variables in the terminal using 'export'
-        # check spotipy api reference for the individual methods
+        while True:
+            print()
+            print(">>> Welcome to Spotipy " + displayName + "!")
+            print(">>> You have " + str(follower) + " followers.")
+            print()
+            print("0 - Search for an artist")
+            print("1 - exit")
+            print()
+            choice = input("Your choice: ")
+
+            # search for the artist
+            if choice == "0":
+                print()
+                search_query = input("Ok, what's their name?: ")
+                print()
+
+                # get search results
+                # maybe can be used to grab a specifc song and track?
+                search_results = spotify_object.search(search_query, limit=1, offset=0, type="artist")
+                print(json.dumps(search_results, sort_keys=True, indent=4))
+
+            # end program
+            if choice == "1":
+                break
+
+
     
