@@ -174,7 +174,7 @@ class API:
                     track_results = track_results['items']
 
                     for item in track_results:
-                        print(str(z) + ": " + item('name'))
+                        print(str(z) + ": " + item['name'])
                         track_uris.append(item['uri'])
                         track_art.append(album_art)
                         z += 1
