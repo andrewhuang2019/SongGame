@@ -19,7 +19,7 @@ class API:
         # can change it later to the website url
         os.environ['SPOTIPY_REDIRECT_URI'] = 'http://google.com/'
 
-    def get_urls(self):
+    def get_playlist_urls(self,):
         cid = '11fa54af84e7489eb6ceeea69ccd38d6'
         secret = '257c188fd54c4e9c86a964982f22bcc8'
         client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
@@ -37,6 +37,7 @@ class API:
         for index in index_list:
             random_songs.append(preview_urls[index])
         return random_songs
+
 
     def quick_start(self):
         #client_id = 'your-client-id'
