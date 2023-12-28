@@ -9,4 +9,16 @@ class Menu:
     
     def run(self):
         #self.api.authorization_code_flow()
-        self.api.spotipy_tutorial()
+        self.api.quick_start()
+
+    def menu(self):
+        pass
+
+    # ratings will be in .1 decimal form out of 10. 
+    # closer to rating = higher score
+    def point_calculator(self):
+        pass
+
+    def win_calculator(self):
+        pass
+
