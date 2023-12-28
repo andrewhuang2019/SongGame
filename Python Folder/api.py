@@ -18,6 +18,9 @@ class API:
         # can change it later to the website url
         os.environ['SPOTIPY_REDIRECT_URI'] = 'http://google.com/'
 
+    def get_urls(self):
+        pass
+
     def quick_start(self):
         #client_id = 'your-client-id'
         #client_secret = 'your-client-secret'
