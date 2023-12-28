@@ -140,6 +140,30 @@ class API:
                 search_results = spotify_object.search(search_query, limit=1, offset=0, type="artist")
                 print(json.dumps(search_results, sort_keys=True, indent=4))
 
+                # artist details
+                artist = search_results['artists']['items'][0]
+                print(artist)
+                print(str(artist['followers']['total'] + " followers"))
+                print(artist['genres'][0])
+                print()
+                artist_id = artist['id']
+
+                # might need to install webbrowser in terminal
+                # webbrowser.open(artist['images'][0]['url'])
+
+                # album and track details
+                track_uris = []
+                track_art = []
+                z = 0
+
+                # extract album data
+                album_results = spotify_object.artist_albums(artist_id)
+
+                # most things in spotify api uses IDs: artists, tracks, etc.
+                # usually json data will show ID, and it should be saved in a variable.
+
+                
+
             # end program
             if choice == "1":
                 break
