@@ -143,7 +143,7 @@ class API:
                 # artist details
                 artist = search_results['artists']['items'][0]
                 print(artist)
-                print(str(artist['followers']['total'] + " followers"))
+                print(str(artist['followers']['total']) + " followers")
                 print(artist['genres'][0])
                 print()
                 artist_id = artist['id']
@@ -162,7 +162,30 @@ class API:
                 # most things in spotify api uses IDs: artists, tracks, etc.
                 # usually json data will show ID, and it should be saved in a variable.
 
-                
+                album_results = album_results['items']
+
+                for item in album_results:
+                    print("ALBUM " + item['name'])
+                    album_id = item['id']
+                    album_art = item['images'][0]['url']
+
+                    # extract track data
+                    track_results = spotify_object.album_tracks(album_id)
+                    track_results = track_results['items']
+
+                    for item in track_results:
+                        print(str(z) + ": " + item('name'))
+                        track_uris.append(item['uri'])
+                        track_art.append(album_art)
+                        z += 1
+                    print()
+
+                # see album art
+                while True:
+                    song_selection = input("Enter a song number to see the album art associated with it (x to exit): ")
+                    if song_selection == "x":
+                        break
+                    # webbrowser.open(track_art[int(song_selection)]) <-- can pull up album art
 
             # end program
             if choice == "1":
