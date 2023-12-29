@@ -9,6 +9,7 @@ h1 {
     font-size: 75px;
     font-family:fantasy;
     font-variant: small-caps;
+    text-decoration: underline;
 }
 
 #instructions {
@@ -16,5 +17,34 @@ h1 {
     margin: 0 auto;
     text-align: left;
     line-height: 25px;
+}
+
+form {
+    font-size: 33px;
+    
+}
+
+input {
+    font-size: large;
+    color: rgb(255, 255, 255);
+    background-color: rgb(125, 125, 125);
+    height: 33px;
+
+}
+
+button {
+    color: black;
+    font-size: 30px;
+    font-family: fantasy;
+    font-variant: small-caps;
+    height: 100px;
+    width: 300px;
+    background-color: rgb(138, 127, 255); /*change*/
+    border-color: rgb(96, 19, 249); /*change*/
+}
+
+button:hover {
+    background-color:rgb(114, 102, 253);
+    border-width: 5px;
 }
 
