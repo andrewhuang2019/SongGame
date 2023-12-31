@@ -1,5 +1,8 @@
 body {
-    background-color: rgb(139, 95, 102);
+    background-image: url("/SongGame/imgs/paper_background.png");
+    background-color:white;
+    background-size:cover;
+    
     position: relative;
     text-align: center;
 }
