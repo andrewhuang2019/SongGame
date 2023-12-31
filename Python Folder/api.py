@@ -36,6 +36,15 @@ class API:
         index_list = random.sample(range(0, len(preview_urls)-1), 4)
         for index in index_list:
             random_songs.append(preview_urls[index])
+
+        #print out urls
+        print()
+        order = 1
+        for song in random_songs:
+            print(f'{order}. {song}')
+            order += 1
+        print()
+
         return random_songs
 
 

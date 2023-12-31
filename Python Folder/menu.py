@@ -9,7 +9,7 @@ class Menu:
     
     def run(self):
         #self.api.authorization_code_flow()
-        print(self.api.get_playlist_urls())
+        self.api.get_playlist_urls()
         
 
     def menu(self):
