@@ -1,15 +1,17 @@
 body {
-    background-color: rgb(139, 95, 102);
+    background-image: url("/SongGame/imgs/paper_background.png");
+    background-color:white;
+    background-size:cover;
+
     position: relative;
     text-align: center;
 }
 
 h1 {
-    color: plum;
+    color: rgb(55, 55, 55);
     font-size: 75px;
     font-family:fantasy;
     font-variant: small-caps;
-    text-decoration: underline;
 }
 
 #instructions {
