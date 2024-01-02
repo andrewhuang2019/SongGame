@@ -46,6 +46,13 @@ class Menu:
             else:
                 print("Player 2 Wins!")
 
+            choice = input("Play Again?(y/n): ")
+
+            if choice == "y":
+                continue
+            else:
+                break
+
     # ratings will be in .1 decimal form out of 10. 
     # closer to rating = higher score
     def point_calculator(self, rater_rating, guesser_rating):
