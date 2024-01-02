@@ -8,14 +8,14 @@ class Menu:
         self.api = API()
     
     def run(self):
-        #self.api.authorization_code_flow()
-        self.api.get_playlist_urls()
+        self.menu()
         
 
     def menu(self):
-
+        #replay loop 
         while True:
 
+            #players input and play 2 rounds winner is determined by better score
             rating1 = input("Enter rating of song #1: ")
 
             rating2 = input("Enter rating of song #2: ")
@@ -40,6 +40,7 @@ class Menu:
 
             player_two_score = self.point_calculator(rating4, guess)
 
+            #use win calculator to find winner or tie
             if self.win_calculator(player_one_score, player_two_score) == "0":
                 print("Tie!")
             elif self.win_calculator(player_one_score, player_two_score):
@@ -47,6 +48,7 @@ class Menu:
             else:
                 print("Player 2 Wins!")
 
+            #Check if player wants to replay
             choice = input("Play Again?(y/n): ")
 
             if choice == "y":
@@ -63,6 +65,7 @@ class Menu:
         
         return score
 
+    #Compares the two games scores and return greater score or 0 for ties
     def win_calculator(self, game_score, other):
         if game_score == other:
             return "0"
