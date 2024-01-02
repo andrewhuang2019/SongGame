@@ -33,7 +33,7 @@ class API:
         for track in playlist: 
             preview_urls.append(track['track']['preview_url'])
 
-        index_list = random.sample(range(0, len(preview_urls)-1), 4)
+        index_list = random.sample(range(0, len(preview_urls)-1), 8)
         for index in index_list:
             random_songs.append(preview_urls[index])
 
