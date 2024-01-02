@@ -2,7 +2,7 @@
 
 from api import API
 from userinput import UserInput
-import math
+
 class Menu:
     def __init__(self):
         self.api = API()
@@ -51,7 +51,7 @@ class Menu:
     def point_calculator(self, rater_rating, guesser_rating):
         
         # calculation that gives score based on how close from 10 to 1
-        score = 10 - math.abs(rater_rating - guesser_rating)
+        score = 10 - abs(rater_rating - guesser_rating)
         
         return score
 
