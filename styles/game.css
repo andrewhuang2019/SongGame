@@ -1,5 +1,5 @@
 body {
-    background-image: url("/SongGame/imgs/paper_background.png");
+    background-image: url("../imgs/paper_background.png");
     background-color:white;
     background-size:cover;
     
@@ -19,6 +19,33 @@ h1 {
     align-items: center;
     justify-content: center;
     column-gap: 30px;
+}
+
+#game-display {
+    position: relative;
+    background-color: rgba(241, 237, 232, 0.888);
+    margin: auto;
+    max-width: fit-content;
+    
+}
+
+#song-number {
+    padding-top: 15px;
+}
+
+#album-info {
+    padding: 30px;
+}
+
+#song-container {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+#song-info {
+    padding-right: 30px;
+    text-align: left;
 }
 
 #top-bar{
