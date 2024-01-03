@@ -2,13 +2,8 @@
 
 import random
 import os
-import sys
-import json
 import spotipy
-import webbrowser
-import requests
-import spotipy as util
-from spotipy.oauth2 import SpotifyOAuth
+import spotipy 
 from spotipy.oauth2 import SpotifyClientCredentials
 
 class API:
@@ -19,9 +14,11 @@ class API:
         # can change it later to the website url
         os.environ['SPOTIPY_REDIRECT_URI'] = 'http://google.com/'
 
-    def get_playlist_urls(self,):
+
+    def get_playlist_urls(self,playlist_link):
         preview_urls = []
         random_songs = []
+        playlist_link = playlist_link.split('/')
 
         # oauth setup for our spotify account
         cid = '11fa54af84e7489eb6ceeea69ccd38d6'
@@ -30,21 +27,25 @@ class API:
         sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
 
         # pulling playlist info
-        playlist = sp.user_playlist_tracks('11fa54af84e7489eb6ceeea69ccd38d6','49se2DJsnGlPGrbXZgwQ5T')["items"]
+        playlist = sp.user_playlist_tracks('11fa54af84e7489eb6ceeea69ccd38d6',playlist_link[-1])["items"]
         for track in playlist: 
             preview_urls.append(track['track']['preview_url'])
 
         # randomly selecting 8 songs
-        index_list = random.sample(range(0, len(preview_urls)-1), 8)
-        for index in index_list:
-            random_songs.append(preview_urls[index])
+        try:
+            index_list = random.sample(range(0, len(preview_urls)-1), 8)
+        except:
+            print("\nPlaylist must contain 8 or more songs.\n")
+        else:
+            for index in index_list:
+                random_songs.append(preview_urls[index])
 
-        # print out urls
-        print()
-        order = 1
-        for song in random_songs:
-            print(f'{order}. {song}')
-            order += 1
-        print()
+            # print out urls
+            print()
+            order = 1
+            for song in random_songs:
+                print(f'{order}. {song}')
+                order += 1
+            print()
 
-        return random_songs
+            return random_songs
