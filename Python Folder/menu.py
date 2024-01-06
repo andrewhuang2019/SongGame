@@ -8,7 +8,7 @@ class Menu:
         self.api = API()
     
     def run(self):
-        self.api.get_playlist_urls('https://open.spotify.com/playlist/5VvixKeAd1Q2pjsxwG9b2X')
+        urls = self.api.get_playlist_urls('https://open.spotify.com/playlist/5VvixKeAd1Q2pjsxwG9b2X')
         
 
     def menu(self):
