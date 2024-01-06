@@ -16,6 +16,17 @@ class Menu:
         while True:
 
             #players input and play 2 rounds winner is determined by better score
+
+            player1_rating1 = 0
+
+            player1_rating2 = 0
+
+            player1_rating3 = 0
+
+            player1_rating4 = 0
+
+            guess1 = 0
+
             rating1 = input("Enter rating of song #1: ")
 
             rating2 = input("Enter rating of song #2: ")
@@ -27,6 +38,16 @@ class Menu:
             guess = int(input("Enter guess of song #4: "))
 
             player_one_score = self.point_calculator(rating4, guess)
+
+            player2_rating1 = 0
+
+            player2_rating2 = 0
+
+            player2_rating3 = 0
+
+            player2_rating4 = 0
+
+            guess2 = 0
 
             rating1 = input("Enter rating of song #1: ")
 
