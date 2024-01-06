@@ -26,11 +26,17 @@ h1 {
     background-color: rgba(241, 237, 232, 0.888);
     margin: auto;
     max-width: fit-content;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
 }
 
 #song-number {
-    padding-top: 15px;
+    margin: 15px;
+    background-color: rgba(191, 188, 185, 1);
+    width: 50%;
+    border-radius: 15px;
 }
 
 #album-info {
