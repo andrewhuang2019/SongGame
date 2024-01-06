@@ -6,12 +6,17 @@ from userinput import UserInput
 class Menu:
     def __init__(self):
         self.api = API()
+        urls = 0
     
     def run(self):
+        self.receive_information()
+        self.menu()
+
+    def receive_information(self):
         urls = self.api.get_playlist_urls('https://open.spotify.com/playlist/5VvixKeAd1Q2pjsxwG9b2X')
-        
 
     def menu(self):
+
         #replay loop 
         while True:
 
