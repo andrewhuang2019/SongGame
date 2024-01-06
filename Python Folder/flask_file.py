@@ -2,7 +2,11 @@
 
 from flask import Flask
 
-class FlaskWebsite:
-    def __init__(self):
-        pass
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def hello(self):
+    return 'Hello World!'
 
