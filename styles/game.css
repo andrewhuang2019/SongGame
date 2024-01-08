@@ -66,11 +66,11 @@ h1 {
     padding-bottom: s30px;
 }
 
-#rating-number {
+.rating-number {
     font-size: 30px;
 }
 
-#rating-slider {
+.slider {
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
@@ -89,7 +89,7 @@ h1 {
     border-radius: 100%;
 }
 
-#rating-number {
+.rating-number {
     background-color: rgba(191, 188, 185, 1);
     width: 60px;
     border-radius: 200px;
