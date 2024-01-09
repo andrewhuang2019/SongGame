@@ -17,5 +17,7 @@ def game_page():
     song_urls = song_api.get_playlist_urls('https://open.spotify.com/playlist/5VvixKeAd1Q2pjsxwG9b2X')
     return render_template('game.html', song_urls=song_urls)
 
+app.run(debug=True)
+
 
 
