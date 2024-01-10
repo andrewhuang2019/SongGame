@@ -5,6 +5,7 @@ import os
 import spotipy
 import spotipy 
 from spotipy.oauth2 import SpotifyClientCredentials
+from track_details import TrackDetails
 
 class API:
     def __init__(self):
