@@ -16,6 +16,21 @@ class API:
         os.environ['SPOTIPY_REDIRECT_URI'] = 'http://google.com/'
 
 
+    def get_album_data(self,playlist_link):
+        playlist_link = playlist_link.split('/')
+
+        cid = '11fa54af84e7489eb6ceeea69ccd38d6'
+        secret = '257c188fd54c4e9c86a964982f22bcc8'
+        client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
+        sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
+
+        playlist = sp.user_playlist('11fa54af84e7489eb6ceeea69ccd38d6',playlist_link[-1])
+
+        #returns list with playlist name and image url, respectively 
+        print([playlist['name'],sp.playlist_cover_image(playlist_link[-1])[0]['url']])
+
+
+
     def get_playlist_urls(self,playlist_link):
         tracks = []
         random_songs = []
@@ -42,3 +57,4 @@ class API:
                 random_songs.append(tracks[index])
 
             return random_songs
+

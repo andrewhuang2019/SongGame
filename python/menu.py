@@ -9,7 +9,9 @@ class Menu:
         urls = 0
     
     def run(self):
-        self.receive_information()
+        #self.receive_information()
+        self.api.get_album_data('https://open.spotify.com/playlist/5VvixKeAd1Q2pjsxwG9b2X')
+
         self.menu()
 
     def receive_information(self):
