@@ -17,7 +17,7 @@ class API:
 
 
     def get_playlist_urls(self,playlist_link):
-        preview_urls = []
+        tracks = []
         random_songs = []
         playlist_link = playlist_link.split('/')
 
@@ -30,23 +30,15 @@ class API:
         # pulling playlist info
         playlist = sp.user_playlist_tracks('11fa54af84e7489eb6ceeea69ccd38d6',playlist_link[-1])["items"]
         for track in playlist: 
-            preview_urls.append(track['track']['preview_url'])
+            tracks.append(TrackDetails(track['track']['preview_url'],track['track']['name'],track['track']['artists'][0]['name']))
 
         # randomly selecting 8 songs
         try:
-            index_list = random.sample(range(0, len(preview_urls)-1), 8)
+            index_list = random.sample(range(0, len(tracks)-1), 8)
         except:
             print("\nPlaylist must contain 8 or more songs.\n")
         else:
             for index in index_list:
-                random_songs.append(preview_urls[index])
-
-            # print out urls
-            print()
-            order = 1
-            for song in random_songs:
-                print(f'{order}. {song}')
-                order += 1
-            print()
+                random_songs.append(tracks[index])
 
             return random_songs
