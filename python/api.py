@@ -27,7 +27,7 @@ class API:
         playlist = sp.user_playlist('11fa54af84e7489eb6ceeea69ccd38d6',playlist_link[-1])
 
         #returns list with playlist name and image url, respectively 
-        print([playlist['name'],sp.playlist_cover_image(playlist_link[-1])[0]['url']])
+        return([playlist['name'],sp.playlist_cover_image(playlist_link[-1])[0]['url']])
 
 
 
