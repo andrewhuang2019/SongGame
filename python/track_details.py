@@ -4,3 +4,4 @@ class TrackDetails:
         self.preview_url = preview_url
         self.song_name = song_name
         self.song_artist = song_artist
+        self.image = image

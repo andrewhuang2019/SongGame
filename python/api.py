@@ -47,6 +47,10 @@ class API:
         for track in playlist: 
             tracks.append(TrackDetails(track['track']['preview_url'],track['track']['name'],track['track']['artists'][0]['name']))
 
+
+        while random_songs.length < 8:
+            random_songs.append(TrackDetails())
+
         # randomly selecting 8 songs
         try:
             index_list = random.sample(range(0, len(tracks)-1), 8)
