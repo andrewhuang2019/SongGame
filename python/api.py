@@ -45,11 +45,18 @@ class API:
         # pulling playlist info
         playlist = sp.user_playlist_tracks('11fa54af84e7489eb6ceeea69ccd38d6',playlist_link[-1])["items"]
         for track in playlist: 
-            tracks.append(TrackDetails(track['track']['preview_url'],track['track']['name'],track['track']['artists'][0]['name']))
 
+            preview_url = track['track']['preview_url']
 
-        while random_songs.length < 8:
-            random_songs.append(TrackDetails())
+            song_name = track['track']['name']
+
+            song_artist = track['track']['artists'][0]['name']
+
+            album_image = sp.playlist_cover_image(playlist_link[-1][0]['url'])
+
+            print(album_image)
+
+            tracks.append(TrackDetails(preview_url, song_name, song_artist, album_image))
 
         # randomly selecting 8 songs
         try:
