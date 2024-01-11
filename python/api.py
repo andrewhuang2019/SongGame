@@ -52,9 +52,9 @@ class API:
 
             song_artist = track['track']['artists'][0]['name']
 
-            album_image = sp.playlist_cover_image(playlist_link[-1][0]['url'])
+            album_image = sp.playlist_cover_image(playlist_link[-1])[0]['url']
 
-            print(album_image)
+            album_image = 0
 
             tracks.append(TrackDetails(preview_url, song_name, song_artist, album_image))
 
