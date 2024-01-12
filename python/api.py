@@ -29,7 +29,7 @@ class API:
         #returns list with playlist name and image url, respectively 
         return([playlist['name'],sp.playlist_cover_image(playlist_link[-1])[0]['url']])
     
-    def get_playlist_name(self, playlist_link):
+    def get_playlist_information(self, playlist_link):
 
         playlist_link = playlist_link.split('/')
 
@@ -38,11 +38,13 @@ class API:
         client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
         sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
 
-        playlist = sp.user_playlist_tracks('11fa54af84e7489eb6ceeea69ccd38d6',playlist_link[-1])
+        playlist = sp.user_playlist('11fa54af84e7489eb6ceeea69ccd38d6',playlist_link[-1])
 
-        print(playlist)
+        playlist_name = playlist['name']
 
+        playlist_image = playlist['images'][0]['url']
 
+        return [playlist_name, playlist_image]
 
 
     def get_playlist_urls(self,playlist_link):
