@@ -70,8 +70,6 @@ class API:
 
             album_name = track['track']['album']['name']
 
-            album_name = 0
-
             tracks.append(TrackDetails(preview_url, song_name, song_artist, album_image, album_name))
 
         # randomly selecting 8 songs
