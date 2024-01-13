@@ -11,8 +11,8 @@
     <div id="top-bar">
         <h3>Song Guesser</h3>
         <div id="playlist-display">
-            <h4>Playing from: (placeholder name)</h4>
-            <img src="https://cdn.discordapp.com/attachments/948823044707713037/1188658375345586207/ramona_cover.jpg?ex=659b5360&is=6588de60&hm=f52d8b7dbddfbe26de219ae8f865af04d607dae80dad74e9e77741ce153f4e92&" width="50" height="50">
+            <h4>Playing from: {{playlist_details[0]}}</h4>
+            <img src={{playlist_details[1]}} width="50" height="50">
         </div>
     </div>
 
@@ -22,16 +22,16 @@
         </div>
         <div id="song-container">
             <div id="album-info">
-                <img id="album-cover" src="https://cdn.discordapp.com/attachments/948823044707713037/1188658375345586207/ramona_cover.jpg?ex=65a48de0&is=659218e0&hm=79557d15eb90d69044f5b531452b94e913550204692728ab1c88a29d64c4f302&">
-                <h3><i>Ramona</i></h3>
+                <img id="album-cover" src={{track_details[0].album_image}}>
+                <h3><i>{{track_details[0].album_name}}</i></h3>
             </div>
             <div id="song-info">
                 <div id="songname-artists">
-                    <h2><q>Conversations with Gravity</q></h2>
-                    <h3>By Kill Bill: The Rapper</h3>
+                    <h2><q>{{track_details[0].song_name}}</q></h2>
+                    <h3>By {{track_details[0].song_artist}}</h3>
                 </div>
                 <div id="audio-container">
-                    <audio id="game-audio" class="audio" controls src={{song_urls[0]}}></audio>
+                    <audio id="game-audio" class="audio" controls src={{track_details[0].preview_url}}></audio>
                 </div>
             </div>
         </div>
@@ -50,16 +50,16 @@
         </div>
         <div id="song-container">
             <div id="album-info">
-                <img id="album-cover" src="https://cdn.discordapp.com/attachments/948823044707713037/1188658375345586207/ramona_cover.jpg?ex=65a48de0&is=659218e0&hm=79557d15eb90d69044f5b531452b94e913550204692728ab1c88a29d64c4f302&">
-                <h3><i>Ramona</i></h3>
+                <img id="album-cover" src={{track_details[1].album_image}}>
+                <h3><i>{{track_details[1].album_name}}</i></h3>
             </div>
             <div id="song-info">
                 <div id="songname-artists">
-                    <h2><q>Conversations with Gravity</q></h2>
-                    <h3>By Kill Bill: The Rapper</h3>
+                    <h2><q>{{track_details[1].song_name}}</q></h2>
+                    <h3>By {{track_details[1].song_artist}}</h3>
                 </div>
                 <div id="audio-container">
-                    <audio id="game-audio" class="audio" controls src="{{song_urls[1]}}"></audio>
+                    <audio id="game-audio" class="audio" controls src="{{track_details[1].preview_url}}"></audio>
                 </div>
             </div>
         </div>
@@ -78,16 +78,16 @@
         </div>
         <div id="song-container">
             <div id="album-info">
-                <img id="album-cover" src="https://cdn.discordapp.com/attachments/948823044707713037/1188658375345586207/ramona_cover.jpg?ex=65a48de0&is=659218e0&hm=79557d15eb90d69044f5b531452b94e913550204692728ab1c88a29d64c4f302&">
-                <h3><i>Ramona</i></h3>
+                <img id="album-cover" src={{track_details[2].album_image}}>
+                <h3><i>{{track_details[2].album_name}}</i></h3>
             </div>
             <div id="song-info">
                 <div id="songname-artists">
-                    <h2><q>Conversations with Gravity</q></h2>
-                    <h3>By Kill Bill: The Rapper</h3>
+                    <h2><q>{{track_details[2].song_name}}</q></h2>
+                    <h3>By {{track_details[2].song_artist}}</h3>
                 </div>
                 <div id="audio-container">
-                    <audio id="game-audio" class="audio" controls src="{{song_urls[2]}}"></audio>
+                    <audio id="game-audio" class="audio" controls src="{{track_details[2].preview_url}}"></audio>
                 </div>
             </div>
         </div>
@@ -106,16 +106,16 @@
         </div>
         <div id="song-container">
             <div id="album-info">
-                <img id="album-cover" src="https://cdn.discordapp.com/attachments/948823044707713037/1188658375345586207/ramona_cover.jpg?ex=65a48de0&is=659218e0&hm=79557d15eb90d69044f5b531452b94e913550204692728ab1c88a29d64c4f302&">
-                <h3><i>Ramona</i></h3>
+                <img id="album-cover" src={{track_details[3].album_image}}>
+                <h3><i>{{track_details[3].album_name}}</i></h3>
             </div>
             <div id="song-info">
                 <div id="songname-artists">
-                    <h2><q>Conversations with Gravity</q></h2>
-                    <h3>By Kill Bill: The Rapper</h3>
+                    <h2><q>{{track_details[3].song_name}}</q></h2>
+                    <h3>By {{track_details[3].song_artist}}</h3>
                 </div>
                 <div id="audio-container">
-                    <audio id="game-audio" class="audio" controls src="{{song_urls[3]}}"></audio>
+                    <audio id="game-audio" class="audio" controls src="{{track_details[3].preview_url}}"></audio>
                 </div>
             </div>
         </div>

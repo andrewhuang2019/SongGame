@@ -18,14 +18,20 @@ def main_page():
         print("posting")
         #have recieved input, use request to get the html input value
         playlist_url = request.form.get("playlist")
-        print(playlist_url)
+        if playlist_url == "":
+            return game_page()
         return game_page(playlist=playlist_url)
 
 @app.route('/game')
 def game_page(playlist="https://open.spotify.com/playlist/5VvixKeAd1Q2pjsxwG9b2X"):
     song_api = API()
-    song_urls = song_api.get_playlist_urls(playlist)
+    #https://open.spotify.com/playlist/0xZnpACpVA3NdZbNpoVjWD?si=43c9cae91e7645bc
+    #https://open.spotify.com/playlist/5VvixKeAd1Q2pjsxwG9b2X
+    #https://open.spotify.com/playlist/0xZnpACpVA3NdZbNpoVjWD?si=2a9cf917703845cd
+    
+    track_details = song_api.get_playlist_urls(playlist)
     print("game page template rendered")
-    return render_template('game.html', song_urls=song_urls)
+    playlist_details = song_api.get_playlist_information(playlist)
+    return render_template('game.html', track_details=track_details, playlist_details=playlist_details)
 
-app.run(debug=True)
+app.run(debug=True) 
