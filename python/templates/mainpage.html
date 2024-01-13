@@ -10,14 +10,11 @@
 <body>
     <h1>Song Guesser</h1><br>
 
-    <form method="get">
+    <form action="{{ url_for("main_page")}}" method="post">
         <label for="playlist">Playlist: </label>
-        <input type="text" id="playlist" placeholder="link to playlist">
+        <input type="text" id="playlist" name="playlist" placeholder="link to playlist"><br><br>
+        <button type="submit">START</button><br><br>
     </form><br>
-    
-    <form id="startButton">
-        <button type="button">START</button><br><br>
-    </form>
 
     <div id="how_to_play">
         <h2>How to play:</h2>
