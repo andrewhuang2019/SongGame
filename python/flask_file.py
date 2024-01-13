@@ -18,7 +18,8 @@ def main_page():
         print("posting")
         #have recieved input, use request to get the html input value
         playlist_url = request.form.get("playlist")
-        print(playlist_url)
+        if playlist_url == "":
+            return game_page()
         return game_page(playlist=playlist_url)
 
 @app.route('/game')
