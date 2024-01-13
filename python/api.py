@@ -77,14 +77,14 @@ class API:
 
             tracks.append(TrackDetails(preview_url, song_name, song_artist, album_image, album_name))
 
-        # randomly selecting 8 songs
-        try:
-            index_list = random.sample(range(0, len(tracks)-1), 8)
-        except:
-            print("\nPlaylist must contain 8 or more songs.\n")
-        else:
-            for index in index_list:
-                random_songs.append(tracks[index])
+        # randomly selecting 8 songs with valid preview urls
+        TRACKS_NEEDED = 4
+        valid_url_tracks = [track for track in tracks if track.preview_url != None]
+        
+        if len(valid_url_tracks) < TRACKS_NEEDED:
+            raise Exception("Not enough tracks with valid urls")
+        
+        return random.sample(valid_url_tracks, k=TRACKS_NEEDED)
 
-            return random_songs
+
 
