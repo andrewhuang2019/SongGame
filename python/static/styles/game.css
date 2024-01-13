@@ -17,11 +17,27 @@ h1 {
     font-variant: small-caps;
 }
 
-#playlist-display {
+#top-bar {
+    font-size: 40px;
+    position: relative;
+    background-color: rgba(241, 237, 232, 0.888);
+    margin: 25px;
+    margin-top: 0px;
+    max-width: fit-content;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    column-gap: 30px;
+    padding: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+#playlist-display {
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
 #game-display {
