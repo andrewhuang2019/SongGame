@@ -34,7 +34,7 @@ final_button.onclick = function() {
         document.getElementById("tip-container-final").innerHTML = "What does name2 think name1 would rate this?";
     }else if(times_pressed == 2){ 
         // display user's score, display score
-        const score = Math.abs(10 - (final_val - final_slider.value));
+        const score = 10 - Math.abs(final_val - final_slider.value);
         document.getElementById("tip-container-final").innerHTML = "Name2's score: ".concat(score.toString());
     }else{
         // do nothing
