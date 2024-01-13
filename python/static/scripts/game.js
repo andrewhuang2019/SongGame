@@ -31,11 +31,11 @@ final_button.onclick = function() {
         final_slider.value = 5;
         final_rating_number.innerHTML= 5;
 
-        document.getElementById("tip-container-final").innerHTML = "What does name2 think name1 would rate this?";
+        document.getElementById("tip-container-final").innerHTML = "<h3>What does name2 think name1 would rate this?</h3>";
     }else if(times_pressed == 2){ 
         // display user's score, display score
         const score = 10 - Math.abs(final_val - final_slider.value);
-        document.getElementById("tip-container-final").innerHTML = "Name2's score: ".concat(score.toString());
+        document.getElementById("tip-container-final").innerHTML = "<h3>Name2's score: " + score + "</h3>";
     }else{
         // do nothing
     }
