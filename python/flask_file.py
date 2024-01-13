@@ -26,9 +26,11 @@ def game_page(playlist="https://open.spotify.com/playlist/5VvixKeAd1Q2pjsxwG9b2X
     song_api = API()
     #https://open.spotify.com/playlist/0xZnpACpVA3NdZbNpoVjWD?si=43c9cae91e7645bc
     #https://open.spotify.com/playlist/5VvixKeAd1Q2pjsxwG9b2X
+    #https://open.spotify.com/playlist/0xZnpACpVA3NdZbNpoVjWD?si=2a9cf917703845cd
+    
     track_details = song_api.get_playlist_urls(playlist)
     print("game page template rendered")
-    playlist_details = song_api.get_playlist_information('https://open.spotify.com/playlist/5VvixKeAd1Q2pjsxwG9b2X')
+    playlist_details = song_api.get_playlist_information(playlist)
     return render_template('game.html', track_details=track_details, playlist_details=playlist_details)
 
 app.run(debug=True) 

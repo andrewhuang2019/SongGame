@@ -38,7 +38,7 @@ class API:
         client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
         sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
 
-        playlist = sp.user_playlist('11fa54af84e7489eb6ceeea69ccd38d6',playlist_link[-1])
+        playlist = sp.user_playlist('11fa54af84e7489eb6ceeea69ccd38d6', playlist_link[-1])
 
         playlist_name = playlist['name']
 
@@ -59,7 +59,7 @@ class API:
         sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
 
         # pulling playlist info
-        playlist = sp.user_playlist_tracks('11fa54af84e7489eb6ceeea69ccd38d6',playlist_link[-1])["items"]
+        playlist = sp.user_playlist_tracks('11fa54af84e7489eb6ceeea69ccd38d6', playlist_link[-1])["items"]
         for track in playlist: 
 
             preview_url = track['track']['preview_url']
